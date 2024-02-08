@@ -7,7 +7,11 @@ namespace TipCalculator.Models
         [Required(ErrorMessage = "Please enter a value for cost of meal.")]
         [Range(0.0, 10000000.0, ErrorMessage = "Cost of meal must be greater than zero.")]
         public double? MealCost { get; set; }
-
+        /// <summary>
+        /// Calculates a tip based on the cost of the meal and a percentage ranging from 0-1%
+        /// </summary>
+        /// <param name="percent"></param>
+        /// <returns> The calculated tip amount </returns>
         public double CalculateTip(double percent)
         {
             if (MealCost.HasValue)
